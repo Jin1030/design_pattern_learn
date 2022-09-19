@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.16)
+
+set(PROJECT "single_respon")
+
+project(${PROJECT}_project VERSION 1.0.0 LANGUAGES CXX)
+
+set(LIBRARY_NAME ${PROJECT}_lib)
+
+add_library(${LIBRARY_NAME} ${PROJECT_SOURCE_DIR}/src/single_respon.cpp ${PROJECT_SOURCE_DIR}/src/PersistenceManager.cpp)
+
+include_directories(${LIBRARY_NAME} "${PROJECT_SOURCE_DIR}/include/") #
+
+set (EXECUTABLE_NAME ${PROJECT}_exe)
+
+add_executable(${EXECUTABLE_NAME} main.cpp)
+
+target_link_libraries(${EXECUTABLE_NAME} ${LIBRARY_NAME})
