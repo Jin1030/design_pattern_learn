@@ -6,10 +6,10 @@
 int main ()
 {
     Journal journal("Dear Diary");
-    std::cout<<"helloworld1"<<std::endl;
     journal.add_entry("I ate a apple");
     journal.add_entry("i am happy today");
 
-    PersistenceManager pm;
-    pm.save(journal, "diary.txt");
+    PersistenceManager::save(journal, "diary.txt");
+    PersistenceManager::read_text("diary.txt");
+
 }
